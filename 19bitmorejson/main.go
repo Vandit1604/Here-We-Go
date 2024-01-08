@@ -18,22 +18,22 @@ type course struct {
 func main() {
 	fmt.Println("We will learn more about JSON in this video alongside Go")
 
-	JSONDataFromWeb := []byte(
-		`{
-				"coursename": "Golang",
-				"courseprice": 800,
-				"website": "Youtbe",
-				"tags": ["golang","backend","cloud"]
-			}
-	`)
+	// JSONDataFromWeb := []byte(
+	// 	`{
+	// 			"coursename": "Golang",
+	// 			"courseprice": 800,
+	// 			"website": "Youtbe",
+	// 			"tags": ["golang","backend","cloud"]
+	// 		}
+	// `)
 
-	EncodeJSON()
-	DecodeJSONFromWeb(JSONDataFromWeb)
-	GetJSONFromURL("https://dummyjson.com/products")
+	// EncodeJSON()
+	// DecodeJSONFromWeb(JSONDataFromWeb)
+	GetJSONFromURL("https://rating.jenkins.io/rate/result.php")
 }
 
 func GetJSONFromURL(url string) {
-	response, err := http.Get("https://dummyjson.com/products")
+	response, err := http.Get(url)
 	if err != nil {
 		panic(err)
 	}
@@ -48,7 +48,7 @@ func GetJSONFromURL(url string) {
 	}
 
 	DummyJSONDataFromWeb := databytes
-	DecodeJSONFromWeb(DummyJSONDataFromWeb)
+	fmt.Println(string(DummyJSONDataFromWeb))
 }
 
 func EncodeJSON() {
