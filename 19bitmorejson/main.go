@@ -29,7 +29,7 @@ func main() {
 
 	// EncodeJSON()
 	// DecodeJSONFromWeb(JSONDataFromWeb)
-	GetJSONFromURL("https://rating.jenkins.io/rate/result.php")
+	GetJSONFromURL("https://example.com/")
 }
 
 func GetJSONFromURL(url string) {
